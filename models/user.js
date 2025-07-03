@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const videoGameSchema = new mongoose.Schema({
     title: {
         type: String,
