@@ -17,7 +17,7 @@ const passUserToView = (req, res, next) => {
     next();
 }
 
-module.exports = function(app) {
+const applyMiddleware = function(app) {
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
     app.use(methodOverride('_method'));
@@ -29,4 +29,8 @@ module.exports = function(app) {
     }));
 }
 
-// module.exports = isSignedIn, passUserToView;
+module.exports = {
+    applyMiddleware,
+    isSignedIn,
+    passUserToView,
+};
