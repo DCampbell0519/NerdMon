@@ -11,8 +11,8 @@
     <ul>
         <% games.forEach(game => {  %>
             <li>
-                <a href="/users/<%= user._id %>/videoGames/<%= videoGameId %>">
-                    <%= game.name %>
+                <a href="/users/<%= user._id %>/videoGames/<%= game._id %>">
+                    <%= game.title %>
                 </a>
             </li>
         <% }) %>

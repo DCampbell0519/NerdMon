@@ -29,7 +29,25 @@ router.get('/', async (req, res) => {
     }
 })
 
+// NEW
+router.get('/new', (req, res) => {
+    res.render('games/new.ejs')
+})
 
+// CREATE
+router.post('/', async (req, res) => {
+    console.log(req.body)
+
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+        currentUser.vault.push(req.body)
+        await currentUser.save()
+        res.redirect(`/users/${currentUser._id}/videoGames`)
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
 
 
 

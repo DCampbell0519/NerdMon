@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Game</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a Game to the Vault!</h1>
+    <form action="/users/<%= user._id %>/videoGames" method="POST">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+
+        <label for="gamingSystem">Gaming System:</label>
+        <input type="text" name="gamingSystem" id="gamingSystem">
+
+        <label for="releaseDate">Release Date:</label>
+        <input type="text" name="releaseDate" id="releaseDate">
+
+        <label for="companyLink">Company Link:</label>
+        <input type="text" name="companyLink" id="companyLink">
+
+        <label for="gameImage">Game Image:</label>
+        <input type="text" name="gameImage" id="gameImage">
+
+        <label for="notes">Notes:</label>
+        <textarea type="text" name="notes" id="notes"></textarea>
+
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="lovedIt">Loved it!</option>
+            <option value="hatedIt">Hated it!</option>
+            <option value="neutral">Meh</option>
+            <option value="haveYetToTry">Haven't played it yet</option>
+        </select>
+
+        <button type="submit">Add Game to Vault</button>
+    </form>
+</body>
+</html>
