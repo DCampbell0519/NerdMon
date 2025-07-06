@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    videoGames: [videoGameSchema],
+    vault: [videoGameSchema],
 });
 
 const User = mongoose.model('User', userSchema);

@@ -1,11 +1,38 @@
 const express = require('express');
 const router = express.Router();
-
 const User = require('../models/user.js');
 
-module.exports = router;
+/*
+Action	Route	HTTP Verb
+Index	‘/users/:userId/videoGames’	GET
+New	‘/users/:userId/videoGames/new’	GET
+Create	‘/users/:userId/videoGames’	POST
+Show	‘/users/:userId/videoGames/:videoGameId’	GET
+Edit	‘/users/:userId/videoGames/:videoGameId/edit’	GET
+Update	‘/users/:userId/videoGames/:videoGameId’	PUT
+Delete	‘/users/:userId/videoGames/:videoGameId’	DELETE
+*/
 
 
-router.get('/', (req, res) => {
-    res.send('Hello games index route!')
+// INDEX
+router.get('/', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id)
+
+        res.render('games/index.ejs', {
+            games: currentUser.vault,
+            user: currentUser,
+        });
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
 })
+
+
+
+
+
+
+
+module.exports = router;
