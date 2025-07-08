@@ -1,5 +1,3 @@
-const express = require('express');
-const router = express.Router();
 const User = require('../models/user.js');
 
 /*
@@ -13,9 +11,19 @@ Update	‘/users/:userId/videoGames/:videoGameId’	PUT
 Delete	‘/users/:userId/videoGames/:videoGameId’	DELETE
 */
 
+module.exports = {
+    index,
+    new: newGame,
+    delete: deleteCar,
+    update,
+    create,
+    edit,
+    show,
+}
+
 
 // INDEX
-router.get('/', async (req, res) => {
+async function index (req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id)
 
@@ -27,15 +35,15 @@ router.get('/', async (req, res) => {
         console.log(error)
         res.redirect('/')
     }
-})
+};
 
 // NEW
-router.get('/new', (req, res) => {
+function newGame (req, res) {
     res.render('games/new.ejs')
-})
+};
 
 // DELETE
-router.delete('/:videoGameId', async (req, res) => {
+async function deleteCar (req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
         const currentGame = currentUser.vault.id(req.params.videoGameId).deleteOne();
@@ -45,10 +53,10 @@ router.delete('/:videoGameId', async (req, res) => {
         console.log(error)
         res.redirect('/')
     }
-})
+};
 
 // UPDATE
-router.put('/:videoGameId', async (req, res) => {
+async function update (req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
         const currentGame = currentUser.vault.id(req.params.videoGameId);
@@ -60,10 +68,10 @@ router.put('/:videoGameId', async (req, res) => {
         console.log(error)
         res.redirect('/')
     }
-})
+};
 
 // CREATE
-router.post('/', async (req, res) => {
+async function create (req, res) {
     console.log(req.body)
 
     try {
@@ -75,10 +83,10 @@ router.post('/', async (req, res) => {
         console.log(error)
         res.redirect('/')
     }
-})
+};
 
 // EDIT
-router.get('/:videoGameId/edit', async (req, res) => {
+async function edit (req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
         const currentGame = currentUser.vault.id(req.params.videoGameId);
@@ -89,10 +97,10 @@ router.get('/:videoGameId/edit', async (req, res) => {
         console.log(error)
         res.redirect('/')
     }
-})
+};
 
 // SHOW
-router.get('/:videoGameId', async (req, res) => {
+async function show (req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
         const currentGame = currentUser.vault.id(req.params.videoGameId)
@@ -103,10 +111,5 @@ router.get('/:videoGameId', async (req, res) => {
         console.log(error)
         res.redirect('/')
     }
-})
+};
 
-
-
-
-
-module.exports = router;

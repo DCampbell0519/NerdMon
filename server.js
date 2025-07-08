@@ -1,13 +1,13 @@
 /*------------------------------- Starter Code -------------------------------*/
 const express = require('express');
 const app = express();
-const middleware = require('./middleware/mid.js');
 require('dotenv').config();
 require('./config/db.js');
+const middleware = require('./middleware/mid.js');
 const { applyMiddleware, isSignedIn, passUserToView } = require('./middleware/mid.js');
 
 const authRouter = require('./routes/auth.js');
-const gameController = require('./controllers/games.js');
+const gameRouter = require('./routes/games.js');
 
 
 const port = process.env.PORT ? process.env.PORT : "3000"
@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 app.use(passUserToView);
 app.use('/auth', authRouter);
 app.use(isSignedIn);
-app.use('/users/:userId/videoGames', gameController);
+app.use('/users/:userId/videoGames', gameRouter);
 
 
 app.listen(port, () => {
