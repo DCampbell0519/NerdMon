@@ -6,7 +6,7 @@ require('dotenv').config();
 require('./config/db.js');
 const { applyMiddleware, isSignedIn, passUserToView } = require('./middleware/mid.js');
 
-const authController = require('./controllers/auth.js');
+const authRouter = require('./routes/auth.js');
 const gameController = require('./controllers/games.js');
 
 
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(passUserToView);
-app.use('/auth', authController);
+app.use('/auth', authRouter);
 app.use(isSignedIn);
 app.use('/users/:userId/videoGames', gameController);
 

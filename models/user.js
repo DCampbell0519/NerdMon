@@ -20,12 +20,14 @@ const videoGameSchema = new mongoose.Schema({
         type: String, 
         enum: ['lovedIt', 'hatedIt', 'neutral', 'haveYetToTry'],
     },
+    owner: String,
 });
 
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
+        unique: true,
     },
     password: {
         type: String,
