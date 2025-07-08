@@ -47,6 +47,21 @@ router.delete('/:videoGameId', async (req, res) => {
     }
 })
 
+// UPDATE
+router.put('/:videoGameId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const currentGame = currentUser.vault.id(req.params.videoGameId);
+
+        currentGame.set(req.body)
+        await currentUser.save()
+        res.redirect(`/users/${currentUser._id}/videoGames/${currentGame._id}`)
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
+
 // CREATE
 router.post('/', async (req, res) => {
     console.log(req.body)
@@ -56,6 +71,20 @@ router.post('/', async (req, res) => {
         currentUser.vault.push(req.body)
         await currentUser.save()
         res.redirect(`/users/${currentUser._id}/videoGames`)
+    } catch (error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
+
+// EDIT
+router.get('/:videoGameId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const currentGame = currentUser.vault.id(req.params.videoGameId);
+        res.render('games/edit.ejs', {
+            games: currentGame,
+        })
     } catch (error) {
         console.log(error)
         res.redirect('/')
