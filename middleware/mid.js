@@ -22,6 +22,7 @@ const applyMiddleware = function(app) {
     app.use(express.json());
     app.use(methodOverride('_method'));
     app.use(morgan('dev'));
+    app.use(express.static('public'));
     app.use(session({
         secret: process.env.SESSION_SECRET,
         resave: false,

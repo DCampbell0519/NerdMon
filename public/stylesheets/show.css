@@ -1,0 +1,7 @@
+.game-image img {
+    width: 400px;
+    height: auto;
+    display: flexbox;
+    margin: 1rem auto;
+    align-items: left;
+}
