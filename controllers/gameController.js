@@ -106,6 +106,7 @@ async function show (req, res) {
         const currentGame = currentUser.vault.id(req.params.videoGameId)
         res.render('games/show.ejs', {
             games: currentGame,
+            isMyPage: true,
         })
     } catch (error) {
         console.log(error)

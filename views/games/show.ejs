@@ -19,7 +19,7 @@
             <li>Did I like it?: This game sucked!</li>
         <% } else if (games.status === 'neutral') { %>
             <li>Did I like it?: Meh.</li>
-        <% } else if (games.status === haveYetToTry) {  %>
+        <% } else if (games.status === 'haveYetToTry') {  %>
             <li>Did I like it?: You haven't tried it yet!</li>
         <% } %>
     </ul>
@@ -27,12 +27,14 @@
         <img src="<%= games.gameImage %>" alt="">
     </div>
 
-    <form action="/users/<%= user._id %>/videoGames/<%= games._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete this Game</button>
-    </form>
-
-    <a href="/users/<%= user._id %>/videoGames/<%= games._id %>/edit">
-        <button type="submit">Edit this Game</button>
-    </a>
+    <% if (isMyPage) {  %>
+        <form action="/users/<%= user._id %>/videoGames/<%= games._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete this Game</button>
+        </form>
+    
+        <a href="/users/<%= user._id %>/videoGames/<%= games._id %>/edit">
+            <button type="submit">Edit this Game</button>
+        </a>
+    <% } %>
 </body>
 </html>

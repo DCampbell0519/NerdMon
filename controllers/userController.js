@@ -29,12 +29,28 @@ async function communityUser (req, res) {
 }
 
 async function communityVault (req, res) {
-    const foundUser = await User.findById(req.params.userId)
-    const index = foundUser.vault.filter(game => {
-        console.log({game: game._id.toString()})
-        return game._id.toString() === req.params.videoGameId
-    })
+    try {
+        const foundUser = await User.findById(req.params.userId)
+        if (!foundUser) {
+            return res.status(404).send('User not found');
+        }
+        const isMyPage = req.session.user._id === req.params.userId;
 
-    console.log({index, params: req.params})
-    res.send('Here should be the Communal Vault')
+        const vault = foundUser.vault || [];
+        
+        const vaultGames = vault.find(game => {
+            console.log({game: game._id.toString()})
+            return game._id.toString() === req.params.videoGameId
+        })
+        
+        console.log({game: vaultGames, params: req.params})
+        res.render('games/show.ejs', {
+            games: vaultGames,
+            isMyPage: isMyPage,
+        })
+    } catch (error) {
+        console.log(error)
+        res.redirect('/communityPage')
+    }
+    
 }
