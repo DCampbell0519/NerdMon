@@ -37,6 +37,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    profilePhoto: String,  
+    age: Number,
+    favoriteQuote: String,
     vault: [videoGameSchema],
 });
 
