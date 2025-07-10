@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/show.css">
-    <title>Document</title>
+    <title>Profile Page</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Check out <%= users.username %>'s Gamer Vault!</h1>
 
     <div class="game-image">
-        <img src="<%= users.profilePhoto %>" alt="">
+        <img src="<%= users.profilePhoto %>" alt="User's profile photo">
     </div>
     
     <div class="user-profile">
@@ -22,7 +22,7 @@
         </ul>    
     </div>
     <ul>
-        <% vault.forEach(game => {  %>
+        <% users.vault.forEach(game => {  %>
             <a href="/communityPage/<%= users._id %>/<%= game._id %>">
                 <li><%= game.title %></li>
             </a>

@@ -9,6 +9,7 @@ const { applyMiddleware, isSignedIn, passUserToView } = require('./middleware/mi
 const authRouter = require('./routes/auth.js');
 const gameRouter = require('./routes/games.js');
 const userRouter = require('./routes/users.js');
+const profileRouter = require('./routes/users.js');
 
 
 const port = process.env.PORT ? process.env.PORT : "3000"
@@ -16,7 +17,6 @@ const port = process.env.PORT ? process.env.PORT : "3000"
 /*------------------------------- Middleware -------------------------------*/
 
 applyMiddleware(app);
-
 
 /*------------------------------- Routers -------------------------------*/
 
@@ -35,6 +35,7 @@ app.use('/auth', authRouter);
 app.use(isSignedIn);
 app.use('/users/:userId/videoGames', gameRouter);
 app.use('/communityPage', userRouter);
+app.use('/users/:userId/videoGames/userProfile', profileRouter)
 
 
 app.listen(port, () => {

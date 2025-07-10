@@ -2,7 +2,7 @@
     <a href="/">Home</a>
     <a href="/communityPage">Explore our Community</a>
     <% if (user) {  %>
-        <a href="/users/<%= user._id %>/videoGames">View my collection</a>
+        <a href="/communityPage/profile">View my Profile</a>
         <a href="/users/<%= user._id %>/videoGames/new">Add Game to Vault</a>
         <a href="/auth/sign-out">Sign Out</a>
     <% } else { %>
