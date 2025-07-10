@@ -40,6 +40,7 @@ const userSchema = new mongoose.Schema({
     profilePhoto: String,  
     age: Number,
     favoriteQuote: String,
+    bio: String,
     vault: [videoGameSchema],
 });
 

@@ -7,6 +7,9 @@ module.exports = router;
 
 
 router.get('/', userController.communityIndex);
-router.get('/profile', profileController.userProfile)
+router.get('/profile', profileController.userProfile);
+router.put('/profile', profileController.updateProfile);
+router.get('/profile/edit', profileController.editProfile);
+
 router.get('/:userId', userController.communityUser);
 router.get('/:userId/:videoGameId', userController.communityVault);

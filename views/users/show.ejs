@@ -15,14 +15,16 @@
     </div>
     
     <div class="user-profile">
-        <ul>
-            <li>Username: <%= users.username %></li>
-            <li>Age: <%= users.age %></li>
-            <li>Favorite Quote: <%= users.favoriteQuote %></li>
-        </ul>    
+        <h2><%= users.username %>'s Stats:</h2>
+        <ul>Username: <%= users.username %></ul>
+        <ul>Age: <%= users.age %></ul>
+        <ul>Favorite Quote: <%= users.favoriteQuote %></ul>
+        <ul>Bio: <%= users.bio %></ul>
     </div>
+    
+    <h2><%= users.username %>'s Games:</h2>
     <ul>
-        <% vault.forEach(game => {  %>
+        <% users.vault.forEach(game => {  %>
             <a href="/communityPage/<%= users._id %>/<%= game._id %>">
                 <li><%= game.title %></li>
             </a>
