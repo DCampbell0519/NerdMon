@@ -20,6 +20,7 @@ const videoGameSchema = new mongoose.Schema({
         type: String, 
         enum: ['lovedIt', 'hatedIt', 'neutral', 'haveYetToTry'],
     },
+    rating: Number,
     owner: String,
 });
 
