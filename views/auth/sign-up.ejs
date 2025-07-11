@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="/stylesheets/auth.css">
     <title>Sign Up</title>
 </head>
-<body>
+<body class="signup-body">
     <%- include('../partials/_navbar.ejs') %>
     <div class="signup-container">
-        <h1>Create a new Account!</h1>
-        <form action="/auth/sign-up" method="POST">
+        <h1 id="h1-signup">Create a new Account!</h1>
+        <form class="signup-form" action="/auth/sign-up" method="POST">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username">
     

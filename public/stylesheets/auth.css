@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
-body {
+.signup-body {
     font-family: "Michroma", sans-serif;
     display: flex;
     flex-direction: column;
@@ -10,7 +10,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
 }
 
 .signup-container {
@@ -20,10 +19,9 @@ body {
     align-items: flex-end;
     width: 100%;
     height: 80%;
-   
 }
 
-form {
+.signup-form {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -35,17 +33,56 @@ form {
     color: rgb(255, 255, 255);
     font-weight: bold;
     box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
-    margin-right: 1rem;
+    margin-right: 3rem;
     backdrop-filter: opacity(20%);
     z-index: 10;
 }
 
-h1 {
-    margin-right: 1rem;
+.signin-body {
+    font-family: "Michroma", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://i.imgur.com/zhWOOPL.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 80%;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 16em;
+    height: 50%;
+    background-color: rgba(164, 245, 231, 0.2);
+    padding: 30px 40px 20px 40px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
+    margin-left: 2rem;
+    backdrop-filter: opacity(20%);
+    z-index: 10;
+}
+
+#h1-signup {
+    margin-right: 3rem;
     color: white;
 }
 
-.signup-button {
+.signup-button,
+.signin-button {
     padding: 10px;
     background-color: rgba(164, 245, 231, 0.2);
     color: white;
