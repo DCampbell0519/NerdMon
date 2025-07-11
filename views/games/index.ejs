@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css">
     <title>My Gaming Vault</title>
 </head>
-<body>
+<body class="index-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Welcome to your Bat Cave, <%= user.username %>!</h1>
-    <ul>
+    <div class="index-container">
+        <h1>Welcome to your Bat Cave, <%= user.username %>!</h1>
+        <h3>What would you like to do today?</h3>
+
+    </div>
+        
+    
+
+
+
+    
+    <!-- <ul>
         <% games.forEach(game => {  %>
             <li>
                 <a href="/users/<%= user._id %>/videoGames/<%= game._id %>">
@@ -16,6 +27,6 @@
                 </a>
             </li>
         <% }) %>
-    </ul>
+    </ul> -->
 </body>
 </html>

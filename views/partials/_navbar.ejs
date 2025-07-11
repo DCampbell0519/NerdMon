@@ -1,12 +1,16 @@
+<link rel="stylesheet" href="/stylesheets/partials.css">
+
 <nav>
-    <a href="/">Home</a>
-    <a href="/communityPage">Explore our Community</a>
-    <% if (user) {  %>
-        <a href="/communityPage/profile">View my Profile</a>
-        <a href="/users/<%= user._id %>/videoGames/new">Add Game to Vault</a>
-        <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-        <a href="/auth/sign-in">Sign In Nerd</a>
-        <a href="/auth/sign-up">Become a NerdMon</a>
-    <% } %>
+    <div class="navbar">
+        <a href="/">NerdMon</a>
+        <a href="/communityPage">Check Out Your Fellow Nerds</a>
+        <% if (user) {  %>
+            <a href="/communityPage/profile">View my Profile</a>
+            <a href="/users/<%= user._id %>/videoGames/new">Add Game to Vault</a>
+            <a href="/auth/sign-out">Fare thee well, Nerd</a>
+        <% } else { %>
+            <a href="/auth/sign-in">Sign In, Nerd</a>
+            <a href="/auth/sign-up">Become a NerdMon</a>
+        <% } %>
+    </div>
 </nav>
