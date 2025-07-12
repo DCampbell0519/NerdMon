@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+.profile-image img {
+    width: 200px;
+    height: auto;
+    display: flexbox;
+    margin-left: 5px;
+    align-items: left;
+}
+
+.profile-body {
+    font-family: "Michroma", sans-serif;
+    background-image: url('https://i.imgur.com/nftuIpE.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.user-profile {
+    color: white;
+}
+
+#profile-intro {
+    color: white;
+}
+
+.edit-button {
+    padding: 10px;
+    background-color: rgba(4, 86, 54, 0.42);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    margin: 15px 0;
+    font-size: 1.1em;
+    backdrop-filter: opacity(20%);
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    color: black;
+}
+
+.edit-button:active {
+    transform: translateY(4px);
+}

@@ -94,11 +94,13 @@
     cursor: pointer;
 }
 
+.edit-button:hover,
 .signin-button:hover,
 .signup-button:hover {
     color: black;
 }
 
+.edit-button:active,
 .signin-button:active,
 .signup-button:active {
     transform: translateY(4px);
