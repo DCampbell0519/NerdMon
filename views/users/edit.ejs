@@ -8,10 +8,10 @@
 </head>
 <body class="user-edit-body">
     <%- include('../partials/_navbar.ejs') %>
-    <div class="user-edit-container">
+    <div class="edit-container">
         <h1>What would you like to change about <%= users.username %>'s Profile?</h1>
         <p>(If only it were so easy to update our stats in real life...)</p>
-        <form class="user-edit-form" action="/communityPage/profile?_method=PUT" method="POST">
+        <form class="edit-form" action="/communityPage/profile?_method=PUT" method="POST">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value="<%= users.username %>">
     
