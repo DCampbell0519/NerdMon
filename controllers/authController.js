@@ -20,7 +20,6 @@ async function newUser (req, res) {
     if (userInDatabase) {
         return res.send('User already exists')
     }
-    
     if (req.body.password !== req.body.confirmPassword) {
         return res.send('Passwords do not match')
     }
