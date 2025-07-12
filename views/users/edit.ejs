@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
     <title>Edit Your Profile</title>
 </head>
-<body>
+<body class="user-edit-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>What would you like to change about <%= users.username %>'s Profile?</h1>
-    <form action="/communityPage/profile?_method=PUT" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="<%= users.username %>">
+    <div class="user-edit-container">
+        <h1>What would you like to change about <%= users.username %>'s Profile?</h1>
+        <p>(If only it were so easy to update our stats in real life...)</p>
+        <form class="user-edit-form" action="/communityPage/profile?_method=PUT" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="<%= users.username %>">
+    
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" value="<%= users.email %>">
+    
+            <label for="profilePhoto">Profile Photo:</label>
+            <input type="text" name="profilePhoto" id="profilePhoto" value="<%= users.profilePhoto %>">
+    
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" value="<%= users.age %>">
+    
+            <label for="favoriteQuote">Favorite Quote:</label>
+            <input type="text" name="favoriteQuote" id="favoriteQuote" value="<%= users.favoriteQuote %>">
+    
+            <label for="bio">Bio:</label>
+            <textarea type="text" name="bio" id="bio"><%= users.bio %></textarea>
+    
+            <button class="user-edit-button" type="submit">Update Yo Self!</button>
+        </form>
 
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email" value="<%= users.email %>">
-
-        <label for="profilePhoto">Profile Photo:</label>
-        <input type="text" name="profilePhoto" id="profilePhoto" value="<%= users.profilePhoto %>">
-
-        <label for="age">Age:</label>
-        <input type="number" name="age" id="age" value="<%= users.age %>">
-
-        <label for="favoriteQuote">Favorite Quote:</label>
-        <input type="text" name="favoriteQuote" id="favoriteQuote" value="<%= users.favoriteQuote %>">
-
-        <label for="bio">Bio:</label>
-        <textarea type="text" name="bio" id="bio"><%= users.bio %></textarea>
-
-        <button type="submit">Update Yo Self!</button>
-    </form>
+    </div>
 </body>
 </html>

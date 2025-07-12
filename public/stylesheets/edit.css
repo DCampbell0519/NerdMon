@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');  
+
+.user-edit-body {
+    font-family: "Michroma", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://i.imgur.com/5XPJUc6.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.user-edit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    color: white;
+}
+
+.user-edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 24em;
+    height: 100%;
+    background-color: rgba(38, 27, 39, 0.3);
+    padding: 30px 40px 20px 40px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
+    margin-right: 3rem;
+    backdrop-filter: opacity(20%);
+    font-size: 22px;
+}
+
+.user-edit-button {
+    padding: 10px;
+    background-color: rgba(38, 27, 39, 0.3);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    margin: 2rem auto;
+    font-size: 1.1em;
+    backdrop-filter: opacity(20%);
+    cursor: pointer;
+}
+
+.user-edit-button:hover {
+    color: black;
+}
+
+.user-edit-button:active {
+    transform: translateY(4px);
+}
