@@ -10,8 +10,9 @@ module.exports = {
 }
 
 async function communityIndex (req, res) {
-    const usersInDatabase = await User.find({}).sort({ username: 1 })
-    console.log(usersInDatabase)
+    const usersInDatabase = await User.find({}).sort({ username: 1 });
+
+    console.log(usersInDatabase)    
 
     res.render('users/index.ejs', {
         users: usersInDatabase,

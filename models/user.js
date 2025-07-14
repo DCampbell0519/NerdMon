@@ -38,7 +38,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    profilePhoto: String,  
+    profilePhoto: {
+        type: String, 
+        default: null,
+    },  
     age: Number,
     favoriteQuote: String,
     bio: String,
