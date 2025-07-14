@@ -4,39 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/game.css">
     <title><%= games.title %></title>
 </head>
-<body>
+<body class="game-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= games.title %></h1>
-    <ul>
-        <li>Gaming System: <%= games.gamingSystem %></li>
-        <li>Release Date: <%= games.releaseDate %></li>
-        <li>Rating: <%= games.rating %>/10</li>
-        <li><a href="<%= games.companyLink %>" target="blank">Link to Production Company</a></li>
-        <li>Notes: <%= games.notes %></li>
-        <% if (games.status === 'lovedIt') {  %>
-            <li>Did I like it?:  You loved it!</li>
-        <% } else if (games.status === 'hatedIt') { %>
-            <li>Did I like it?: This game sucked!</li>
-        <% } else if (games.status === 'neutral') { %>
-            <li>Did I like it?: Meh.</li>
-        <% } else if (games.status === 'haveYetToTry') {  %>
-            <li>Did I like it?: You haven't tried it yet!</li>
-        <% } %>
-    </ul>
+    <h1 id="game-intro"><%= games.title %></h1>
+
     <div class="game-image">
-        <img src="<%= games.gameImage %>" alt="">
+        <% if (games.gameImage && games.gameImage.includes('http'))  {  %>
+            <img src="<%= games.gameImage %>" alt="Cover art for <%= games.title %>">
+    </div>
+        <%  } else {  %>
+            <div id="image-not-found">
+                <img src="https://i.imgur.com/lzmijpV.jpeg" alt="404 error page, with a Panda claiming he didn't eat it ">
+            </div>
+        <%  }  %>
     </div>
 
-    <% if (isMyPage) {  %>
-        <form action="/users/<%= user._id %>/videoGames/<%= games._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete this Game</button>
-        </form>
-    
-        <a href="/users/<%= user._id %>/videoGames/<%= games._id %>/edit">
-            <button type="submit">Edit this Game</button>
-        </a>
-    <% } %>
+    <div class="game-profile">
+        <ul>
+            <ul>Gaming System: <%= games.gamingSystem %></ul>
+            <ul>Release Date: <%= games.releaseDate %></ul>
+            <ul>Rating: <%= games.rating %>/10</ul>
+            <ul><a href="<%= games.companyLink %>" target="blank">Link to Production Company</a></ul>
+            <ul>Notes: <%= games.notes %></ul>
+            <% if (games.status === 'lovedIt') {  %>
+                <ul>Did I like it?:  You loved it!</ul>
+            <% } else if (games.status === 'hatedIt') { %>
+                <ul>Did I like it?: This game sucked!</ul>
+            <% } else if (games.status === 'neutral') { %>
+                <ul>Did I like it?: Meh.</ul>
+            <% } else if (games.status === 'haveYetToTry') {  %>
+                <ul>Did I like it?: You haven't tried it yet!</ul>
+            <% } %>
+
+            <% if (isMyPage) {  %>
+                <form action="/users/<%= user._id %>/videoGames/<%= games._id %>?_method=DELETE" method="POST">
+                    <button class="game-button" type="submit">Delete this Game</button>
+                </form>
+            
+                <a href="/users/<%= user._id %>/videoGames/<%= games._id %>/edit">
+                    <button class="game-button" type="submit">Edit this Game</button>
+                </a>
+            <% } %>
+    </div>
+
 </body>
 </html>

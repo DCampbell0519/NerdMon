@@ -14,7 +14,7 @@ Delete	‘/users/:userId/videoGames/:videoGameId’	DELETE
 module.exports = {
     index,
     new: newGame,
-    delete: deleteCar,
+    delete: deleteGame,
     update,
     create,
     edit,
@@ -43,12 +43,12 @@ function newGame (req, res) {
 };
 
 // DELETE
-async function deleteCar (req, res) {
+async function deleteGame (req, res) {
     try {
         const currentUser = await User.findById(req.session.user._id);
         const currentGame = currentUser.vault.id(req.params.videoGameId).deleteOne();
         await currentUser.save();
-        res.redirect(`/users/${currentUser._id}/videoGames`)
+        res.redirect(`/communityPage/profile`)
     } catch (error) {
         console.log(error)
         res.redirect('/')
