@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');  
+
+.new-game-body {
+    font-family: "Michroma", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('https://i.imgur.com/UaUSwC1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.new-game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 80%;
+    margin-left: 45px;
+}
+
+.new-game-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 16em;
+    height: 100%;
+    background-color: rgba(164, 245, 231, 0.2);
+    padding: 30px 40px 20px 40px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
+    margin-right: 3rem;
+    backdrop-filter: opacity(20%);
+    z-index: 10;
+}
+
+#new-game-intro {
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
