@@ -36,7 +36,6 @@ async function communityVault (req, res) {
         const vault = foundUser.vault || [];
         
         const vaultGames = vault.find(game => {
-            console.log({game: game._id.toString()})
             return game._id.toString() === req.params.videoGameId
         })
         

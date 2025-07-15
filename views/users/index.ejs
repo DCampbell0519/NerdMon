@@ -15,17 +15,17 @@
                 <a href="/communityPage/<%= user._id %>">
                     <li><%= user.username %>
                 </a>
-                    <% if (user.profilePhoto && user.profilePhoto.includes('http'))  {  %>
-                        <div class="profile-image">
-                            <img src="<%= user.profilePhoto %>" alt="User provided profile photo">
-                        </div>
-                    <%  } else {  %>
-                        <div id="image-not-found">
-                            <img src="https://i.imgur.com/lzmijpV.jpeg" alt="404 error page, with a Panda claiming he didn't eat it ">
-                        </div>
-                    <%  }  %>
+                <% if (user.profilePhoto && user.profilePhoto.includes('http'))  {  %>
+                    <div class="profile-image">
+                        <img src="<%= user.profilePhoto %>" alt="User provided profile photo">
+                    </div>
+                <%  } else {  %>
+                    <div id="image-not-found">
+                        <img src="https://i.imgur.com/lzmijpV.jpeg" alt="404 error page, with a Panda claiming he didn't eat it ">
+                    </div>
+                <%  }  %>
                     </li>
-                    <%  }) %>
+                <%  }) %>
         </ul>
     </div>
 </body>
