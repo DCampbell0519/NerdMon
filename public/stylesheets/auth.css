@@ -98,6 +98,7 @@ html, body {
     font-size: 1.1em;
     backdrop-filter: opacity(20%);
     cursor: pointer;
+    font-family: "Michroma", sans-serif;
 }
 
 .signin-button:hover,

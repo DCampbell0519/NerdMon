@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
 
-
 module.exports = {
     communityIndex,
     communityUser,
@@ -12,8 +11,6 @@ module.exports = {
 async function communityIndex (req, res) {
     const usersInDatabase = await User.find({}).sort({ username: 1 });
 
-    console.log(usersInDatabase)    
-
     res.render('users/index.ejs', {
         users: usersInDatabase,
     });
@@ -21,7 +18,6 @@ async function communityIndex (req, res) {
 
 async function communityUser (req, res) {
     const foundUser = await User.findById(req.params.userId)
-    console.log('foundUser:', foundUser)
 
     res.render('users/show.ejs', {
         users: foundUser,
@@ -44,7 +40,6 @@ async function communityVault (req, res) {
             return game._id.toString() === req.params.videoGameId
         })
         
-        console.log({game: vaultGames, params: req.params})
         res.render('games/show.ejs', {
             games: vaultGames,
             isMyPage: isMyPage,
@@ -53,5 +48,4 @@ async function communityVault (req, res) {
         console.log(error)
         res.redirect('/communityPage')
     }
-    
 }

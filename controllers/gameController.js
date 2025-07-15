@@ -21,7 +21,6 @@ module.exports = {
     show,
 }
 
-
 // INDEX
 async function index (req, res) {
     try {
@@ -72,8 +71,6 @@ async function update (req, res) {
 
 // CREATE
 async function create (req, res) {
-    console.log(req.body)
-
     try {
         const currentUser = await User.findById(req.session.user._id)
         currentUser.vault.push(req.body)

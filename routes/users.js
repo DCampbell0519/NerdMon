@@ -5,7 +5,6 @@ const profileController = require('../controllers/profileController.js');
 
 module.exports = router;
 
-
 router.get('/', userController.communityIndex);
 router.get('/profile', profileController.userProfile);
 router.put('/profile', profileController.updateProfile);

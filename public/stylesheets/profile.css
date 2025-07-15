@@ -52,6 +52,10 @@ html, body {
     flex-direction: column;
 }
 
+.user-profile a {
+    color: white;
+}
+
 #profile-intro {
     color: white;
 }
@@ -66,6 +70,7 @@ html, body {
     font-size: 1.1em;
     backdrop-filter: opacity(20%);
     cursor: pointer;
+    font-family: "Michroma", sans-serif;
 }
 
 .edit-button:hover {

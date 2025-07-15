@@ -45,6 +45,7 @@ async function userSignIn (req, res) {
         req.body.password,
         userInDatabase.password,
     )
+    
     if (!validPassword) {
         res.send('Login failed.  Please try again.')
     }
