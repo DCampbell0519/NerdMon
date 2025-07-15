@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.profile-image img {
+    width: 200px;
+    height: auto;
+    display: flexbox;
+    margin-left: 5px;
+    margin-top: 10px;
+    align-items: left;
+    box-sizing: border-box;
+    border: 3px solid black;
+    box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
+}
+
+#image-not-found img {
+    width: 200px;
+    height: auto;
+    display: flexbox;
+    margin-left: 5px;
+    margin-top: 10px;
+    align-items: left;
+    box-sizing: border-box;
+    border: 3px solid black;
+    box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
+}
+
+.profile-body {
+    font-family: "Michroma", sans-serif;
+    background-image: url('https://i.imgur.com/nftuIpE.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.user-profile {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    margin: 10px 0 0 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile a {
+    color: white;
+}
+
+#profile-intro {
+    color: white;
+}
+
+.edit-button {
+    padding: 10px;
+    background-color: rgba(4, 86, 54, 0.42);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    margin: 15px 0;
+    font-size: 1.1em;
+    backdrop-filter: opacity(20%);
+    cursor: pointer;
+    font-family: "Michroma", sans-serif;
+}
+
+.edit-button:hover {
+    color: black;
+}
+
+.edit-button:active {
+    transform: translateY(4px);
+}
+
+.community-index {
+    font-family: "Michroma", sans-serif;
+    background-image: url('https://i.imgur.com/LtQ7gK3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.community-container,
+.community-container a {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+#community-intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+

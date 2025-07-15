@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/auth.css">
     <title>Sign Up</title>
 </head>
-<body>
+<body class="signup-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Create a new Account!</h1>
-    <form action="/auth/sign-up" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
-
-        <label for="email">Email:</label>
-        <input type="text" name="email" id="email">
-
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
-
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" name="confirmPassword" id="confirmPassword">
-
-        <button type="submit">Sign Up</button>
-
-    </form>
+    <div class="signup-container">
+        <h1 id="h1-signup">Create a new Account!</h1>
+        <form class="signup-form" action="/auth/sign-up" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username">
+    
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email">
+    
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
+    
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+    
+            <label for="profilePhoto">Profile Photo:</label>
+            <input type="text" name="profilePhoto" id="profilePhoto">
+    
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age">
+    
+            <label for="favoriteQuote">Favorite Quote:</label>
+            <input type="text" name="favoriteQuote" id="favoriteQuote">
+    
+            <label for="bio">Bio:</label>
+            <input type="text" name="bio" id="bio">
+            
+            <button class="signup-button" type="submit">Join the Nerd-Munity</button>
+        </form>
+    </div>
 </body>
 </html>

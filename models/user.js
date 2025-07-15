@@ -20,12 +20,15 @@ const videoGameSchema = new mongoose.Schema({
         type: String, 
         enum: ['lovedIt', 'hatedIt', 'neutral', 'haveYetToTry'],
     },
+    rating: Number,
+    owner: String,
 });
 
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
+        unique: true,
     },
     password: {
         type: String,
@@ -35,6 +38,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    profilePhoto: {
+        type: String, 
+        default: null,
+    },  
+    age: Number,
+    favoriteQuote: String,
+    bio: String,
     vault: [videoGameSchema],
 });
 

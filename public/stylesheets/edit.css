@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');  
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.user-edit-body {
+    font-family: "Michroma", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://i.imgur.com/5XPJUc6.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-edit-body {
+    font-family: "Michroma", sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://i.imgur.com/188qpQF.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#game-edit-intro {
+    margin-top: 175px;
+}
+
+.edit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    color: white;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 24em;
+    height: 100%;
+    background-color: rgba(38, 27, 39, 0.3);
+    padding: 30px 40px 20px 40px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    box-shadow: 10px 5px 5px rgba(198, 23, 23, 0.5);
+    margin-right: 3rem;
+    backdrop-filter: opacity(20%);
+    font-size: 22px;
+}
+
+.game-edit-button,
+.user-edit-button {
+    padding: 10px;
+    background-color: rgba(38, 27, 39, 0.3);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    margin: 2rem auto;
+    font-size: 1.1em;
+    backdrop-filter: opacity(20%);
+    cursor: pointer;
+    font-family: "Michroma", sans-serif;
+}
+
+.game-edit-button:hover,
+.user-edit-button:hover {
+    color: black;
+}
+
+.game-edit-button:active,
+.user-edit-button:active {
+    transform: translateY(4px);
+}

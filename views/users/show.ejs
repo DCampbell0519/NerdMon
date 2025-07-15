@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <title>Document</title>
+</head>
+<body class="profile-body">
+    <%- include('../partials/_navbar.ejs') %>
+    <h1 id="profile-intro">Check out <%= users.username %>'s Gamer Vault!</h1>
+
+    <% if (users.profilePhoto && users.profilePhoto.includes('http'))  {  %>
+        <div class="profile-image">
+            <img src="<%= users.profilePhoto %>" alt="User provided profile photo">
+        </div>
+    <%  } else {  %>
+        <div id="image-not-found">
+            <img src="https://i.imgur.com/lzmijpV.jpeg" alt="404 error page, with a Panda claiming he didn't eat it ">
+        </div>
+    <%  }  %>
+    
+    <div class="user-profile">
+        <h2><%= users.username %>'s Stats:</h2>
+        <ul>Username: <%= users.username %></ul>
+        <ul>Age: <%= users.age %></ul>
+        <ul>Favorite Quote: <%= users.favoriteQuote %></ul>
+        <ul>Bio: <%= users.bio %></ul>
+        
+        <h2><%= users.username %>'s Games:</h2>
+        <ul>
+            <% users.vault.forEach(game => {  %>
+                <a href="/communityPage/<%= users._id %>/<%= game._id %>">
+                    <li><%= game.title %></li>
+                </a>
+            <%  }) %>
+        </ul>
+    </div>
+</body>
+</html>

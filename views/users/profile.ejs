@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <title>Profile Page</title>
+</head>
+<body class="profile-body">
+    <%- include('../partials/_navbar.ejs') %>
+        <h1 id="profile-intro">Check out <%= users.username %>'s Gamer Vault!</h1>
+    
+        <div class="profile-image">
+            <img src="<%= users.profilePhoto %>" alt="User's profile photo">
+        </div>
+        
+        <div class="user-profile">
+            <h2>My Stats:</h2>
+            <ul>Username: <%= users.username %></ul>
+            <ul>Age: <%= users.age %></ul>
+            <ul>Favorite Quote: <%= users.favoriteQuote %></ul>
+            <ul>Bio: <%= users.bio %></ul>
+            
+            <h2>My Games!</h2>
+            <p>(Give one a click to check it out!)</p>
+            <ul>
+                <% users.vault.forEach(game => {  %>
+                    <a href="/communityPage/<%= users._id %>/<%= game._id %>">
+                        <li id="profile-intro"><%= game.title %></li>
+                    </a>
+                <%  }) %>
+            </ul>
+            
+            <form action="/communityPage/profile/edit">
+                <button class="edit-button" type="submit">Edit your Profile</button>
+            </form>
+        </div>
+</body>
+</html>

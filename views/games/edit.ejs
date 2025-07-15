@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/edit.css">
     <title>Edit this Game</title>
 </head>
-<body>
+<body class="game-edit-body">
     <%- include('../partials/_navbar.ejs') %>
-    <h1>What would you like to change about <%= games.title %>?</h1>
-    <form action="/users/<%= user._id %>/videoGames/<%= games._id %>?_method=PUT" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="<%= games.title %>">
-
-        <label for="gamingSystem">Gaming System:</label>
-        <input type="text" name="gamingSystem" id="gamingSystem" value="<%= games.gamingSystem %>">
-
-        <label for="releaseDate">Release Date:</label>
-        <input type="text" name="releaseDate" id="releaseDate" value="<%= games.releaseDate %>">
-
-        <label for="companyLink">Company Link:</label>
-        <input type="text" name="companyLink" id="companyLink" value="<%= games.companyLink %>">
-
-        <label for="gameImage">Game Image:</label>
-        <input type="text" name="gameImage" id="gameImage" value="<%= games.gameImage %>">
-
-        <label for="notes">Notes:</label>
-        <textarea type="text" name="notes" id="notes"><%= games.notes %></textarea>
-
-        <label for="status">Status:</label>
-        <select name="status" id="status">
-            <option value="lovedIt"
-            <%= games.status === 'lovedIt' ? 'selected' : '' %>
-            >Loved it!</option>
-            
-            <option value="hatedIt"
-            <%= games.status === 'hatedIt' ? 'selected' : '' %>
-            >Hated it!</option>
-
-            <option value="neutral"
-            <%= games.status === 'neutral' ? 'selected' : '' %>
-            >Meh</option>
-
-            <option value="haveYetToTry"
-            <%= games.status === 'haveYetToTry' ? 'selected' : '' %>
-            >Haven't played it yet</option>
-        </select>
-
-        <button type="submit">Update this Game</button>
-    </form>
+    <div class="edit-container">
+        <h1 id="game-edit-intro">What would you like to change about <%= games.title %>?</h1>
+        <form class="edit-form" action="/users/<%= user._id %>/videoGames/<%= games._id %>?_method=PUT" method="POST">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="<%= games.title %>">
+    
+            <label for="gamingSystem">Gaming System:</label>
+            <input type="text" name="gamingSystem" id="gamingSystem" value="<%= games.gamingSystem %>">
+    
+            <label for="releaseDate">Release Date:</label>
+            <input type="text" name="releaseDate" id="releaseDate" value="<%= games.releaseDate %>">
+    
+            <label for="rating">Rating (out of 10):</label>
+            <input type="number" name="rating" id="rating" value="<%= games.rating %>">
+    
+            <label for="companyLink">Company Link:</label>
+            <input type="text" name="companyLink" id="companyLink" value="<%= games.companyLink %>">
+    
+            <label for="gameImage">Game Image:</label>
+            <input type="text" name="gameImage" id="gameImage" value="<%= games.gameImage %>">
+    
+            <label for="notes">Notes:</label>
+            <textarea type="text" name="notes" id="notes"><%= games.notes %></textarea>
+    
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+                <option value="lovedIt"
+                <%= games.status === 'lovedIt' ? 'selected' : '' %>
+                >Loved it!</option>
+                
+                <option value="hatedIt"
+                <%= games.status === 'hatedIt' ? 'selected' : '' %>
+                >Hated it!</option>
+    
+                <option value="neutral"
+                <%= games.status === 'neutral' ? 'selected' : '' %>
+                >Meh</option>
+    
+                <option value="haveYetToTry"
+                <%= games.status === 'haveYetToTry' ? 'selected' : '' %>
+                >Haven't played it yet</option>
+            </select>
+            <button class="game-edit-button" type="submit">Update this Game</button>
+        </form>
+    </div>
 </body>
 </html>

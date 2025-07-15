@@ -1,21 +1,21 @@
 /*------------------------------- Starter Code -------------------------------*/
 const express = require('express');
 const app = express();
-const middleware = require('./middleware/mid.js');
 require('dotenv').config();
 require('./config/db.js');
+const middleware = require('./middleware/mid.js');
 const { applyMiddleware, isSignedIn, passUserToView } = require('./middleware/mid.js');
 
-const authController = require('./controllers/auth.js');
-const gameController = require('./controllers/games.js');
+const authRouter = require('./routes/auth.js');
+const gameRouter = require('./routes/games.js');
+const userRouter = require('./routes/users.js');
+const profileRouter = require('./routes/users.js');
 
-
-const port = process.env.PORT ? process.env.PORT : "3000"
+const port = process.env.PORT ? process.env.PORT : 3000;
 
 /*------------------------------- Middleware -------------------------------*/
 
 applyMiddleware(app);
-
 
 /*------------------------------- Routers -------------------------------*/
 
@@ -30,9 +30,11 @@ app.get('/', (req, res) => {
 });
 
 app.use(passUserToView);
-app.use('/auth', authController);
+app.use('/auth', authRouter);
 app.use(isSignedIn);
-app.use('/users/:userId/videoGames', gameController);
+app.use('/users/:userId/videoGames', gameRouter);
+app.use('/communityPage', userRouter);
+app.use('/users/:userId/videoGames/userProfile', profileRouter)
 
 
 app.listen(port, () => {

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <title>Community Page</title>
+</head>
+<body class="community-index">
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="community-container">
+        <h1 id="community-intro">I present to thee, thy fellow Nerds</h1>
+        <ul>
+            <% users.forEach(user => {  %>
+                <a href="/communityPage/<%= user._id %>">
+                    <li><%= user.username %>
+                </a>
+                    <% if (user.profilePhoto && user.profilePhoto.includes('http'))  {  %>
+                        <div class="profile-image">
+                            <img src="<%= user.profilePhoto %>" alt="User provided profile photo">
+                        </div>
+                    <%  } else {  %>
+                        <div id="image-not-found">
+                            <img src="https://i.imgur.com/lzmijpV.jpeg" alt="404 error page, with a Panda claiming he didn't eat it ">
+                        </div>
+                    <%  }  %>
+                    </li>
+                    <%  }) %>
+        </ul>
+    </div>
+</body>
+</html>

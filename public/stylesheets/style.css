@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.game-image img {
+    width: 400px;
+    height: auto;
+    display: flexbox;
+    margin: 1rem auto;
+    align-items: left;
+}
+
+.home-body {
+    font-family: "Michroma", sans-serif;
+    background-image: url('https://i.imgur.com/JsisVCj.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    border: 5px 5px 5px 0;
+}
+
+.home-container {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 3px solid black;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 1.5rem;
+    margin: 2rem auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    position: relative;
+    font-size: 1rem;
+}
+
+.index-body {
+    font-family: "Michroma", sans-serif;
+    background-image: url('https://i.imgur.com/fDSAVGF.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    text-align: center;
+    margin: 200px auto 0 auto;
+    box-sizing: border-box;
+    width: 800px;
+    box-shadow: 1em 1em 0.4em rgba(198, 23, 23, 0.5), -1em -1em 0.4em rgba(198, 23, 23, 0.5);
+}
+
