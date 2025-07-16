@@ -29,6 +29,7 @@ There were a couple of features I had planned to implement, but ran out of time 
 - An additional data entity, tied to the User model, for comments.
 - A comment feature, that would allow a user to comment on other community member's games. 
 - I wanted to tie my app to the IGDB API.
+- I wanted to add a "photo upload" option, as opposed to having to enter image addresses.
 
 ## Links:
 - [NerdMon](https://nerdmon-601cc8f61bef.herokuapp.com/)
